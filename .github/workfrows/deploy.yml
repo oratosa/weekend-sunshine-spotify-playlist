@@ -30,4 +30,3 @@ jobs:
           runtime: 'python313'
           entry_point: 'hello_world'
           gen2: true
-          
