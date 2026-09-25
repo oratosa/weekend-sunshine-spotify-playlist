@@ -26,7 +26,9 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@v4
         with:
           name: 'weekend-sunshine-spotify-playlist'
+          project_id: '${{ vars.GCP_PROJECT_ID }}'
           region: 'asia-northeast1'
           runtime: 'python313'
-          entry_point: 'hello_world'
+          entry_point: 'fetch_and_save_weekend_sunshine_nhk_identifier_groups'
           environment: 'GEN_2'
+          secrets: 'NHK_API_KEY=projects/${{ vars.GCP_PROJECT_ID }}/secrets/NHK_API_KEY/versions/latest'
